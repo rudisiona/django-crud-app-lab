@@ -1,0 +1,21 @@
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;   
+    margin: 20px;
+    padding: 10px;
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    margin-top: 10px;
+  }
+  

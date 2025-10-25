@@ -7,11 +7,13 @@
 <section class="blog-container">
 {% for blog in blogs %}
 <div class="blog">
+    <a href="{% url 'blog:blog-detail' blog.id %}">
     <h2 class="card-title">{{ blog.title }}</h2>
-    <h4> {{ blog.date }} </h4>
+    <h4> {{ blog.created_at }} </h4>
     <h5>{{blog.post}}</h5>
 
 </div>
+</a>
 {% endfor %}
 </section>
 

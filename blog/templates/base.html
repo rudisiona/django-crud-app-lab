@@ -11,9 +11,23 @@
 </head>
 <body>
     <nav> 
+
+
         <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/blogs">Blogs</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'blog:index' %}">Blogs</a></li>
+            <li><a href="{% url 'blog:create' %}">Write a Blog</a></li>
+            <li>
+                <form id="logout-form" method="post" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit">Log out</button>
+                </form>
+              </li>
+            {% else %}
+            <li><a href="{% url 'blog:base' %}">Home</a></li>
+            <li><a href="{% url 'blog:home' %}">Login</a></li>
+            <li><a href="{% url 'blog:signup' %}">Sign Up</a></li>
+            {% endif %}
         </ul>
     </nav>
     <main>

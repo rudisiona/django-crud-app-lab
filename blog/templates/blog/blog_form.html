@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %} 
+{% block content %}
+<section class="blog">
+
+
+<div class="page-header">
+  {% if blog %}
+    <h1>Edit {{ blog.title }}</h1>
+  {% else %}
+    <h1>Write a Blog</h1>
+  {% endif %}
+</div>
+<div class="form">
+<form action="" method="post" class="form-container">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <div class="button-container">
+    <button type="submit" class="btn submit">Submit!</button>
+  </div>
+</form>
+</div>
+</section>
+
+{% endblock %}
